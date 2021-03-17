@@ -14,6 +14,11 @@ public class Ventana extends JFrame {
         addKeyListener(teclado);
         setVisible(true);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        try {
+            wait(5000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         hilo.start();
     }
 }
