@@ -16,12 +16,13 @@ public class Ventana extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         espera=new JFrame();
 
+
+        hilo.start();
         try {
             Thread.sleep(5000);
             espera.setAlwaysOnTop(true);
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
         }
-        hilo.start();
     }
 }
