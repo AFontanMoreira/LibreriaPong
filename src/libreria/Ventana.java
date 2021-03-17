@@ -4,7 +4,7 @@ import javax.swing.*;
 import java.awt.event.KeyAdapter;
 
 public class Ventana extends JFrame {
-
+    private JFrame espera;
     public Ventana(String nombre, int ANCHO, int ALTO, JPanel lamina, Thread hilo, KeyAdapter teclado) {
         setTitle(nombre);
         setSize(ANCHO,ALTO);
@@ -14,9 +14,11 @@ public class Ventana extends JFrame {
         addKeyListener(teclado);
         setVisible(true);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        try {
+        espera=new JFrame();
 
+        try {
             Thread.sleep(5000);
+            espera.setAlwaysOnTop(true);
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
         }
